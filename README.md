@@ -210,3 +210,13 @@ cd ../frontend && npm run build
 - **Port 8080 or 5173 already in use**:
   - To kill a lingering process on port 8080: `lsof -ti:8080 | xargs kill -9`.
   - To kill a lingering process on port 5173: `lsof -ti:5173 | xargs kill -9`.
+
+---
+
+## 11. Cloud Deployment (Render + Vercel)
+
+CampusVault is fully prepared for instant cloud deployment:
+- **Backend on Render**: Multi-stage production container ([`backend/Dockerfile`](backend/Dockerfile)) and blueprint ([`render.yaml`](render.yaml)).
+- **Frontend on Vercel**: SPA client-side routing rewrites ([`frontend/vercel.json`](frontend/vercel.json)) and Vite environment configuration.
+- **Detailed Step-by-Step Instructions**: Refer to [`docs/DEPLOYMENT_GUIDE.md`](docs/DEPLOYMENT_GUIDE.md) for full instructions on setting up cloud MySQL (e.g. Aiven/TiDB Cloud), configuring environment variables, and linking the live domains.
+
