@@ -51,20 +51,20 @@ export const RegisterPage = () => {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '48px 24px',
-      backgroundColor: '#f7faf8'
+      backgroundColor: '#f0f7ff'
     }}>
       <div style={{
         maxWidth: 580,
         width: '100%',
         backgroundColor: '#ffffff',
         borderRadius: 20,
-        border: '1.5px solid #e2e8f0',
-        boxShadow: '0 20px 40px -15px rgba(0,0,0,0.08)',
+        border: '1.5px solid #bae6fd',
+        boxShadow: '0 20px 40px -15px rgba(14, 165, 233, 0.15)',
         overflow: 'hidden'
       }}>
         {/* Banner */}
         <div style={{
-          background: 'linear-gradient(135deg, #072318 0%, #0c3323 100%)',
+          background: 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)',
           padding: '28px 32px',
           color: '#ffffff',
           textAlign: 'center'
@@ -72,7 +72,7 @@ export const RegisterPage = () => {
           <h2 style={{ color: '#ffffff', fontSize: '1.45rem', marginBottom: 6 }}>
             Student Account Registration
           </h2>
-          <p style={{ color: '#a7f3d0', fontSize: '0.85rem' }}>
+          <p style={{ color: '#e0f2fe', fontSize: '0.85rem' }}>
             Register to access and download your verified institutional certificates
           </p>
         </div>
@@ -102,7 +102,20 @@ export const RegisterPage = () => {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  placeholder="e.g. John Doe"
+                  placeholder="e.g. A Rithika Reddy"
+                  className="form-input"
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Student ID / Roll No *</label>
+                <input
+                  type="text"
+                  required
+                  name="studentId"
+                  value={formData.studentId}
+                  onChange={handleChange}
+                  placeholder="e.g. 21BCE0421"
                   className="form-input"
                 />
               </div>
@@ -120,49 +133,22 @@ export const RegisterPage = () => {
                 />
               </div>
 
-              <div className="form-group">
+              <div className="form-group" style={{ gridColumn: 'span 2' }}>
                 <label className="form-label">Password *</label>
                 <input
                   type="password"
                   required
+                  minLength={6}
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  placeholder="Min 6 characters"
+                  placeholder="At least 6 characters"
                   className="form-input"
                 />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Student ID / Roll No.</label>
-                <input
-                  type="text"
-                  name="studentId"
-                  value={formData.studentId}
-                  onChange={handleChange}
-                  placeholder="e.g. AU-2026-00999 (or auto-assign)"
-                  className="form-input"
-                />
-              </div>
-
-              <div className="form-group">
-                <label className="form-label">Academic Year *</label>
-                <select
-                  name="academicYear"
-                  value={formData.academicYear}
-                  onChange={handleChange}
-                  className="form-select"
-                >
-                  <option value="1st Year (2026-2030)">1st Year (2026-2030)</option>
-                  <option value="2nd Year (2025-2029)">2nd Year (2025-2029)</option>
-                  <option value="3rd Year (2024-2028)">3rd Year (2024-2028)</option>
-                  <option value="4th Year (2023-2027)">4th Year (2023-2027)</option>
-                  <option value="Postgraduate / Alumni">Postgraduate / Alumni</option>
-                </select>
               </div>
 
               <div className="form-group" style={{ gridColumn: 'span 2' }}>
-                <label className="form-label">College / Institute *</label>
+                <label className="form-label">College / Institution *</label>
                 <input
                   type="text"
                   required
@@ -173,8 +159,8 @@ export const RegisterPage = () => {
                 />
               </div>
 
-              <div className="form-group" style={{ gridColumn: 'span 2' }}>
-                <label className="form-label">Department / Branch *</label>
+              <div className="form-group">
+                <label className="form-label">Department *</label>
                 <input
                   type="text"
                   required
@@ -184,13 +170,25 @@ export const RegisterPage = () => {
                   className="form-input"
                 />
               </div>
+
+              <div className="form-group">
+                <label className="form-label">Academic Year</label>
+                <input
+                  type="text"
+                  name="academicYear"
+                  value={formData.academicYear}
+                  onChange={handleChange}
+                  placeholder="e.g. 4th Year (2023-2027)"
+                  className="form-input"
+                />
+              </div>
             </div>
 
             <button
               type="submit"
               disabled={loading}
               className="btn btn-primary"
-              style={{ width: '100%', marginTop: 12, padding: '12px 20px', fontSize: '1rem' }}
+              style={{ width: '100%', marginTop: 24, padding: '12px 20px', fontSize: '1rem' }}
             >
               {loading ? 'Registering Account...' : 'Create Student Account'}
             </button>
@@ -198,7 +196,7 @@ export const RegisterPage = () => {
 
           <div style={{ marginTop: 24, textAlign: 'center', fontSize: '0.875rem', color: '#64748b' }}>
             Already registered?{' '}
-            <Link to="/login" style={{ color: '#165b40', fontWeight: 700 }}>
+            <Link to="/login" style={{ color: '#0284c7', fontWeight: 700 }}>
               Sign In Here
             </Link>
           </div>

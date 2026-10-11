@@ -15,11 +15,11 @@ import java.time.format.DateTimeFormatter;
 @Service
 public class PdfCertificateService {
 
-    private static final Color PRIMARY_GREEN = new Color(14, 56, 44);     // Deep forest green
-    private static final Color GOLD_ACCENT = new Color(197, 155, 39);      // Elegant gold
-    private static final Color LIGHT_BG = new Color(250, 252, 250);        // Off-white / parchment
-    private static final Color TEXT_DARK = new Color(30, 41, 59);          // Slate 800
-    private static final Color TEXT_MUTED = new Color(100, 116, 139);      // Slate 500
+    private static final Color PRIMARY_BLUE = new Color(2, 132, 199);       // Light Ocean Blue (#0284c7)
+    private static final Color ACCENT_LIGHT_BLUE = new Color(56, 189, 248);  // Vibrant Light Sky Blue (#38bdf8)
+    private static final Color LIGHT_BG = new Color(248, 250, 252);          // Pure white / soft ice tint (#f8fafc)
+    private static final Color TEXT_DARK = new Color(15, 23, 42);            // Slate 900 (#0f172a)
+    private static final Color TEXT_MUTED = new Color(100, 116, 139);        // Slate 500 (#64748b)
 
     public byte[] generateCertificatePdf(Certificate cert, byte[] qrCodeImageBytes) {
         try {
@@ -41,14 +41,14 @@ public class PdfCertificateService {
             canvas.rectangle(0, 0, w, h);
             canvas.fill();
 
-            // Outer Forest Green Border
-            canvas.setColorStroke(PRIMARY_GREEN);
+            // Outer Ocean Blue Border
+            canvas.setColorStroke(PRIMARY_BLUE);
             canvas.setLineWidth(5f);
             canvas.rectangle(20, 20, w - 40, h - 40);
             canvas.stroke();
 
-            // Inner Gold Accent Border
-            canvas.setColorStroke(GOLD_ACCENT);
+            // Inner Light Sky Blue Accent Border
+            canvas.setColorStroke(ACCENT_LIGHT_BLUE);
             canvas.setLineWidth(1.5f);
             canvas.rectangle(26, 26, w - 52, h - 52);
             canvas.stroke();
@@ -57,16 +57,16 @@ public class PdfCertificateService {
             drawCornerAccents(canvas, 30, 30, w - 60, h - 60);
 
             // 2. Fonts
-            Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, PRIMARY_GREEN);
-            Font subHeaderFont = FontFactory.getFont(FontFactory.HELVETICA, 10, GOLD_ACCENT);
-            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 22, PRIMARY_GREEN);
+            Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, PRIMARY_BLUE);
+            Font subHeaderFont = FontFactory.getFont(FontFactory.HELVETICA, 10, ACCENT_LIGHT_BLUE);
+            Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 22, PRIMARY_BLUE);
             Font presentationFont = FontFactory.getFont(FontFactory.HELVETICA, 11, TEXT_MUTED);
-            Font nameFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 24, PRIMARY_GREEN);
+            Font nameFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 24, PRIMARY_BLUE);
             Font detailsFont = FontFactory.getFont(FontFactory.HELVETICA, 11, TEXT_DARK);
-            Font eventFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, GOLD_ACCENT);
+            Font eventFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14, PRIMARY_BLUE);
             Font descFont = FontFactory.getFont(FontFactory.HELVETICA_OBLIQUE, 10, TEXT_DARK);
             Font smallMutedFont = FontFactory.getFont(FontFactory.HELVETICA, 8, TEXT_MUTED);
-            Font certIdFont = FontFactory.getFont(FontFactory.COURIER_BOLD, 9, PRIMARY_GREEN);
+            Font certIdFont = FontFactory.getFont(FontFactory.COURIER_BOLD, 9, PRIMARY_BLUE);
 
             // 3. Institution & Title Header
             Paragraph orgHeader = new Paragraph("CAMPUSVAULT SECURE CREDENTIAL REGISTRY", headerFont);
@@ -191,7 +191,7 @@ public class PdfCertificateService {
     }
 
     private void drawCornerAccents(PdfContentByte canvas, float x1, float y1, float x2, float y2) {
-        canvas.setColorStroke(GOLD_ACCENT);
+        canvas.setColorStroke(ACCENT_LIGHT_BLUE);
         canvas.setLineWidth(1f);
         float len = 15f;
         // Top-left

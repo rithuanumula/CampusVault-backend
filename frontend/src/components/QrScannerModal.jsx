@@ -86,7 +86,7 @@ export const QrScannerModal = ({ isOpen, onClose, onScanSuccess }) => {
     <div style={{
       position: 'fixed',
       inset: 0,
-      backgroundColor: 'rgba(4, 20, 13, 0.8)',
+      backgroundColor: 'rgba(15, 23, 42, 0.65)',
       backdropFilter: 'blur(8px)',
       zIndex: 9999,
       display: 'flex',
@@ -100,12 +100,12 @@ export const QrScannerModal = ({ isOpen, onClose, onScanSuccess }) => {
         maxWidth: 480,
         width: '100%',
         overflow: 'hidden',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)',
-        border: '1px solid #d4af37'
+        boxShadow: '0 25px 50px -12px rgba(14, 165, 233, 0.25)',
+        border: '1.5px solid #bae6fd'
       }}>
         {/* Header */}
         <div style={{
-          background: 'linear-gradient(135deg, #072318 0%, #0c3323 100%)',
+          background: 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)',
           padding: '18px 24px',
           display: 'flex',
           alignItems: 'center',
@@ -113,8 +113,8 @@ export const QrScannerModal = ({ isOpen, onClose, onScanSuccess }) => {
           color: '#ffffff'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <Camera size={22} color="#d4af37" />
-            <h3 style={{ color: '#ffffff', fontSize: '1.1rem', margin: 0 }}>Scan Certificate QR</h3>
+            <Camera size={22} color="#ffffff" />
+            <h3 style={{ color: '#ffffff', fontSize: '1.1rem', margin: 0, fontWeight: 700 }}>Scan Certificate QR</h3>
           </div>
           <button
             onClick={handleClose}
@@ -123,7 +123,7 @@ export const QrScannerModal = ({ isOpen, onClose, onScanSuccess }) => {
               border: 'none',
               color: '#ffffff',
               cursor: 'pointer',
-              opacity: 0.8
+              opacity: 0.9
             }}
           >
             <X size={20} />
@@ -142,12 +142,13 @@ export const QrScannerModal = ({ isOpen, onClose, onScanSuccess }) => {
             style={{
               width: '100%',
               minHeight: 280,
-              backgroundColor: '#0a261c',
+              backgroundColor: '#0f172a',
               borderRadius: 12,
               overflow: 'hidden',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              border: '2px solid #e0f2fe'
             }}
           />
 

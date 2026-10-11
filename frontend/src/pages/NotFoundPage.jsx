@@ -10,7 +10,7 @@ export const NotFoundPage = () => {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '80px 24px',
-      backgroundColor: '#f7faf8',
+      backgroundColor: '#f0f7ff',
       textAlign: 'center'
     }}>
       <div style={{ maxWidth: 480 }}>
@@ -27,7 +27,7 @@ export const NotFoundPage = () => {
         }}>
           <ShieldAlert size={40} color="#dc2626" />
         </div>
-        <h1 style={{ fontSize: '3rem', color: '#072418', marginBottom: 8, fontFamily: 'Outfit, sans-serif' }}>
+        <h1 style={{ fontSize: '3rem', color: '#082f49', marginBottom: 8, fontFamily: 'Outfit, sans-serif' }}>
           404
         </h1>
         <h2 style={{ fontSize: '1.4rem', color: '#334155', marginBottom: 12 }}>

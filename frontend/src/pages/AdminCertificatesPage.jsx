@@ -86,12 +86,12 @@ export const AdminCertificatesPage = () => {
   );
 
   return (
-    <div style={{ flex: 1, backgroundColor: '#f7faf8', padding: '40px 24px 80px' }}>
+    <div style={{ flex: 1, backgroundColor: '#f0f7ff', padding: '40px 24px 80px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16, marginBottom: 32 }}>
           <div>
-            <h1 style={{ fontSize: '2.2rem', color: '#072418', marginBottom: 6 }}>
+            <h1 style={{ fontSize: '2.2rem', color: '#082f49', marginBottom: 6 }}>
               Issued Certificates Registry
             </h1>
             <p style={{ color: '#64748b' }}>
@@ -105,9 +105,9 @@ export const AdminCertificatesPage = () => {
         </div>
 
         {/* Filter bar */}
-        <div className="card-white" style={{ padding: 18, marginBottom: 24, display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="card-white" style={{ padding: 18, marginBottom: 24, display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', border: '1.5px solid #bae6fd' }}>
           <div style={{ position: 'relative', flex: 1, minWidth: 260 }}>
-            <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
+            <Search size={18} color="#0284c7" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
             <input
               type="text"
               placeholder="Search by ID, student name, or event..."
@@ -130,9 +130,9 @@ export const AdminCertificatesPage = () => {
                   fontWeight: 600,
                   cursor: 'pointer',
                   border: '1px solid',
-                  backgroundColor: statusFilter === st ? '#10432f' : '#ffffff',
+                  backgroundColor: statusFilter === st ? '#0284c7' : '#ffffff',
                   color: statusFilter === st ? '#ffffff' : '#475569',
-                  borderColor: statusFilter === st ? '#10432f' : '#cbd5e1'
+                  borderColor: statusFilter === st ? '#0284c7' : '#bae6fd'
                 }}
               >
                 {st}
@@ -142,12 +142,12 @@ export const AdminCertificatesPage = () => {
         </div>
 
         {/* Table */}
-        <div className="card-white" style={{ overflow: 'hidden', border: '1.5px solid #e2e8f0' }}>
+        <div className="card-white" style={{ overflow: 'hidden', border: '1.5px solid #bae6fd' }}>
           {loading ? (
             <div style={{ textAlign: 'center', padding: 60, color: '#64748b' }}>Loading certificates...</div>
           ) : filteredCerts.length === 0 ? (
             <div style={{ padding: 48, textAlign: 'center' }}>
-              <Award size={48} color="#cbd5e1" style={{ margin: '0 auto 16px' }} />
+              <Award size={48} color="#bae6fd" style={{ margin: '0 auto 16px' }} />
               <h3 style={{ color: '#334155', marginBottom: 8 }}>No certificates found</h3>
               <p style={{ color: '#64748b' }}>Issue a new certificate to populate the registry.</p>
             </div>
@@ -155,7 +155,7 @@ export const AdminCertificatesPage = () => {
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.9rem' }}>
                 <thead>
-                  <tr style={{ backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0', color: '#475569', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <tr style={{ backgroundColor: '#f0f9ff', borderBottom: '1px solid #bae6fd', color: '#0369a1', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     <th style={{ padding: '14px 20px' }}>Certificate ID</th>
                     <th style={{ padding: '14px 20px' }}>Student Recipient</th>
                     <th style={{ padding: '14px 20px' }}>Event</th>
@@ -172,11 +172,11 @@ export const AdminCertificatesPage = () => {
                       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#f8fafc')}
                       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
                     >
-                      <td style={{ padding: '16px 20px', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700, color: '#072418' }}>
+                      <td style={{ padding: '16px 20px', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700, color: '#082f49' }}>
                         {cert.certificateId}
                       </td>
                       <td style={{ padding: '16px 20px' }}>
-                        <div style={{ fontWeight: 600, color: '#0f172a' }}>{cert.studentName}</div>
+                        <div style={{ fontWeight: 600, color: '#082f49' }}>{cert.studentName}</div>
                         <div style={{ fontSize: '0.8rem', color: '#64748b' }}>{cert.studentCode} • {cert.studentDepartment}</div>
                       </td>
                       <td style={{ padding: '16px 20px' }}>
@@ -196,9 +196,10 @@ export const AdminCertificatesPage = () => {
                           <button
                             onClick={() => openDetailsModal(cert)}
                             className="btn btn-secondary btn-sm"
+                            style={{ border: '1px solid #bae6fd' }}
                             title="View Metadata & QR"
                           >
-                            <Eye size={13} />
+                            <Eye size={13} color="#0284c7" />
                           </button>
 
                           <a
@@ -206,24 +207,26 @@ export const AdminCertificatesPage = () => {
                             target="_blank"
                             rel="noreferrer"
                             className="btn btn-secondary btn-sm"
+                            style={{ border: '1px solid #bae6fd' }}
                             title="Download PDF"
                           >
-                            <Download size={13} />
+                            <Download size={13} color="#0284c7" />
                           </a>
 
                           <Link
                             to={`/verify/${cert.certificateId}`}
                             className="btn btn-secondary btn-sm"
+                            style={{ border: '1px solid #bae6fd' }}
                             title="Verify in Public Registry"
                           >
-                            <ExternalLink size={13} />
+                            <ExternalLink size={13} color="#0284c7" />
                           </Link>
 
                           {cert.status === 'ACTIVE' && (
                             <button
                               onClick={() => openRevokeModal(cert)}
                               className="btn btn-secondary btn-sm"
-                              style={{ color: '#dc2626' }}
+                              style={{ color: '#dc2626', border: '1px solid #fecaca' }}
                               title="Revoke Certificate"
                             >
                               <ShieldAlert size={13} />
@@ -249,19 +252,19 @@ export const AdminCertificatesPage = () => {
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               <div style={{
-                backgroundColor: '#f8fafc',
+                backgroundColor: '#f0f9ff',
                 borderRadius: 12,
                 padding: 18,
-                border: '1px solid #e2e8f0',
+                border: '1.5px solid #bae6fd',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center'
               }}>
                 <div>
-                  <div style={{ fontSize: '0.75rem', color: '#64748b', textTransform: 'uppercase', fontWeight: 700 }}>
+                  <div style={{ fontSize: '0.75rem', color: '#0284c7', textTransform: 'uppercase', fontWeight: 700 }}>
                     Certificate ID
                   </div>
-                  <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '1.25rem', fontWeight: 800, color: '#10432f' }}>
+                  <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '1.25rem', fontWeight: 800, color: '#082f49' }}>
                     {selectedCertDetails.certificateId}
                   </div>
                   <div style={{ marginTop: 4 }}>
@@ -274,34 +277,34 @@ export const AdminCertificatesPage = () => {
                 <img
                   src={certificateApi.getQrUrl(selectedCertDetails.certificateId)}
                   alt="QR"
-                  style={{ width: 80, height: 80, borderRadius: 8, border: '1px solid #cbd5e1', padding: 2, backgroundColor: '#ffffff' }}
+                  style={{ width: 80, height: 80, borderRadius: 8, border: '1px solid #bae6fd', padding: 2, backgroundColor: '#ffffff' }}
                 />
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, fontSize: '0.875rem' }}>
                 <div>
                   <span style={{ color: '#64748b' }}>Recipient:</span>
-                  <div style={{ fontWeight: 600 }}>{selectedCertDetails.studentName}</div>
+                  <div style={{ fontWeight: 600, color: '#082f49' }}>{selectedCertDetails.studentName}</div>
                 </div>
                 <div>
                   <span style={{ color: '#64748b' }}>Student Roll:</span>
-                  <div style={{ fontFamily: 'JetBrains Mono, monospace' }}>{selectedCertDetails.studentCode}</div>
+                  <div style={{ fontFamily: 'JetBrains Mono, monospace', color: '#082f49' }}>{selectedCertDetails.studentCode}</div>
                 </div>
                 <div>
                   <span style={{ color: '#64748b' }}>Department:</span>
-                  <div>{selectedCertDetails.studentDepartment}</div>
+                  <div style={{ color: '#334155' }}>{selectedCertDetails.studentDepartment}</div>
                 </div>
                 <div>
                   <span style={{ color: '#64748b' }}>Institution:</span>
-                  <div>{selectedCertDetails.studentCollege}</div>
+                  <div style={{ color: '#334155' }}>{selectedCertDetails.studentCollege}</div>
                 </div>
                 <div>
                   <span style={{ color: '#64748b' }}>Event:</span>
-                  <div style={{ fontWeight: 600 }}>{selectedCertDetails.eventName}</div>
+                  <div style={{ fontWeight: 600, color: '#082f49' }}>{selectedCertDetails.eventName}</div>
                 </div>
                 <div>
                   <span style={{ color: '#64748b' }}>Date of Issue:</span>
-                  <div>{selectedCertDetails.issueDate}</div>
+                  <div style={{ color: '#334155' }}>{selectedCertDetails.issueDate}</div>
                 </div>
               </div>
 

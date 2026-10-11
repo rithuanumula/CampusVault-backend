@@ -8,7 +8,7 @@ export const Modal = ({ isOpen, onClose, title, children, maxWidth = 560 }) => {
     <div style={{
       position: 'fixed',
       inset: 0,
-      backgroundColor: 'rgba(7, 35, 24, 0.75)',
+      backgroundColor: 'rgba(15, 23, 42, 0.45)',
       backdropFilter: 'blur(6px)',
       zIndex: 9990,
       display: 'flex',
@@ -24,21 +24,21 @@ export const Modal = ({ isOpen, onClose, title, children, maxWidth = 560 }) => {
         maxHeight: '90vh',
         display: 'flex',
         flexDirection: 'column',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.35)',
-        border: '1px solid #e2e8f0',
+        boxShadow: '0 25px 50px -12px rgba(14, 165, 233, 0.18)',
+        border: '1.5px solid #bae6fd',
         overflow: 'hidden',
         animation: 'fadeIn 0.2s ease-out'
       }}>
         {/* Modal Header */}
         <div style={{
           padding: '18px 24px',
-          borderBottom: '1px solid #e2e8f0',
+          borderBottom: '1px solid #e0f2fe',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: '#f8fafc'
+          background: '#f0f9ff'
         }}>
-          <h3 style={{ fontSize: '1.2rem', color: '#0c3323', margin: 0 }}>
+          <h3 style={{ fontSize: '1.2rem', color: '#082f49', margin: 0, fontWeight: 700 }}>
             {title}
           </h3>
           <button

@@ -42,12 +42,12 @@ export const LandingPage = () => {
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       {/* Hero Section */}
       <section style={{
-        background: 'radial-gradient(ellipse at top, #0f432f 0%, #072418 55%, #04140d 100%)',
-        color: '#ffffff',
+        background: 'linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 55%, #f8fafc 100%)',
+        color: '#082f49',
         padding: '80px 24px 90px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(212, 175, 55, 0.2)'
+        borderBottom: '1px solid #bae6fd'
       }}>
         {/* Subtle decorative background circles */}
         <div style={{
@@ -57,7 +57,7 @@ export const LandingPage = () => {
           width: 480,
           height: 480,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%)',
           pointerEvents: 'none'
         }} />
         <div style={{
@@ -67,7 +67,7 @@ export const LandingPage = () => {
           width: 500,
           height: 500,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(36, 140, 100, 0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, transparent 70%)',
           pointerEvents: 'none'
         }} />
 
@@ -79,17 +79,18 @@ export const LandingPage = () => {
             gap: 8,
             padding: '6px 16px',
             borderRadius: 9999,
-            backgroundColor: 'rgba(212, 175, 55, 0.15)',
-            border: '1px solid rgba(212, 175, 55, 0.35)',
-            color: '#fef08a',
+            backgroundColor: '#ffffff',
+            border: '1px solid #bae6fd',
+            color: '#0284c7',
             fontSize: '0.825rem',
             fontWeight: 700,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: 24,
+            boxShadow: '0 2px 8px rgba(14, 165, 233, 0.12)',
             animation: 'fadeIn 0.3s ease-out'
           }}>
-            <Sparkles size={16} color="#d4af37" />
+            <Sparkles size={16} color="#0284c7" />
             Official Institutional Registry • Zero Fake Credentials
           </div>
 
@@ -99,15 +100,15 @@ export const LandingPage = () => {
             fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: '-0.03em',
-            color: '#ffffff',
+            color: '#082f49',
             marginBottom: 20
           }}>
             Your Achievements,<br />
             <span style={{
-              background: 'linear-gradient(135deg, #fef08a 0%, #d4af37 60%, #eab308 100%)',
+              background: 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              textShadow: '0 0 30px rgba(212, 175, 55, 0.25)'
+              textShadow: '0 0 30px rgba(56, 189, 248, 0.25)'
             }}>
               Always Authentic.
             </span>
@@ -116,7 +117,7 @@ export const LandingPage = () => {
           {/* Subheading */}
           <p style={{
             fontSize: 'clamp(1.05rem, 2vw, 1.3rem)',
-            color: '#cbd5e1',
+            color: '#475569',
             maxWidth: 720,
             margin: '0 auto 40px',
             lineHeight: 1.6,
@@ -132,7 +133,7 @@ export const LandingPage = () => {
             backgroundColor: '#ffffff',
             borderRadius: 16,
             padding: 8,
-            boxShadow: '0 20px 40px -10px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.4)',
+            boxShadow: '0 20px 40px -10px rgba(14, 165, 233, 0.16), 0 0 0 1.5px #bae6fd',
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -140,7 +141,7 @@ export const LandingPage = () => {
             flexWrap: 'wrap'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 1, minWidth: 240, paddingLeft: 12 }}>
-              <Search size={22} color="#165b40" />
+              <Search size={22} color="#0284c7" />
               <input
                 type="text"
                 placeholder="Enter Certificate ID (e.g. AU-WEB-2026-00421)"
@@ -153,7 +154,7 @@ export const LandingPage = () => {
                   width: '100%',
                   fontSize: '1rem',
                   fontWeight: 500,
-                  color: '#0f172a',
+                  color: '#082f49',
                   background: 'transparent'
                 }}
               />
@@ -167,18 +168,19 @@ export const LandingPage = () => {
                 style={{
                   padding: '12px 16px',
                   borderRadius: 10,
-                  fontSize: '0.875rem'
+                  fontSize: '0.875rem',
+                  border: '1px solid #bae6fd'
                 }}
                 title="Scan QR with Phone or Webcam"
               >
-                <Camera size={18} color="#165b40" />
+                <Camera size={18} color="#0284c7" />
                 <span>Scan QR</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleVerifySubmit}
-                className="btn btn-gold"
+                className="btn btn-primary"
                 style={{
                   padding: '12px 24px',
                   borderRadius: 10,
@@ -192,7 +194,7 @@ export const LandingPage = () => {
           </div>
 
           {/* Sample quick search badge */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, flexWrap: 'wrap', color: '#94a3b8', fontSize: '0.85rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, flexWrap: 'wrap', color: '#64748b', fontSize: '0.85rem' }}>
             <span>Quick sample test:</span>
             <button
               onClick={() => {
@@ -200,15 +202,16 @@ export const LandingPage = () => {
                 navigate('/verify/AU-WEB-2026-00421');
               }}
               style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                color: '#d4af37',
+                background: '#ffffff',
+                border: '1px solid #bae6fd',
+                color: '#0284c7',
                 padding: '4px 10px',
                 borderRadius: 6,
                 cursor: 'pointer',
                 fontFamily: 'JetBrains Mono, monospace',
                 fontSize: '0.8rem',
-                fontWeight: 600
+                fontWeight: 600,
+                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
               }}
             >
               AU-WEB-2026-00421
@@ -220,7 +223,7 @@ export const LandingPage = () => {
       {/* Live Metric Ribbon */}
       <section style={{
         background: '#ffffff',
-        borderBottom: '1px solid #e2e8f0',
+        borderBottom: '1px solid #e0f2fe',
         padding: '32px 24px'
       }}>
         <div style={{
@@ -232,7 +235,7 @@ export const LandingPage = () => {
           textAlign: 'center'
         }}>
           <div>
-            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#10432f', fontFamily: 'Outfit, sans-serif' }}>
+            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0284c7', fontFamily: 'Outfit, sans-serif' }}>
               {stats?.totalCertificates ?? 1}+
             </div>
             <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#64748b' }}>
@@ -240,7 +243,7 @@ export const LandingPage = () => {
             </div>
           </div>
           <div>
-            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#c59b27', fontFamily: 'Outfit, sans-serif' }}>
+            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0ea5e9', fontFamily: 'Outfit, sans-serif' }}>
               100%
             </div>
             <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#64748b' }}>
@@ -248,7 +251,7 @@ export const LandingPage = () => {
             </div>
           </div>
           <div>
-            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#10432f', fontFamily: 'Outfit, sans-serif' }}>
+            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0369a1', fontFamily: 'Outfit, sans-serif' }}>
               {stats?.totalEvents ?? 3}
             </div>
             <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#64748b' }}>
@@ -256,7 +259,7 @@ export const LandingPage = () => {
             </div>
           </div>
           <div>
-            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#16a34a', fontFamily: 'Outfit, sans-serif' }}>
+            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0284c7', fontFamily: 'Outfit, sans-serif' }}>
               {stats?.totalVerifications ?? 12}+
             </div>
             <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#64748b' }}>
@@ -269,10 +272,10 @@ export const LandingPage = () => {
       {/* Core Platform Pillars */}
       <section style={{ padding: '80px 24px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <div style={{ color: '#165b40', fontWeight: 700, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
+          <div style={{ color: '#0284c7', fontWeight: 700, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
             Engineered For Academic Trust
           </div>
-          <h2 style={{ fontSize: '2.4rem', color: '#072418', fontWeight: 800 }}>
+          <h2 style={{ fontSize: '2.4rem', color: '#082f49', fontWeight: 800 }}>
             Enterprise Credential Architecture
           </h2>
           <p style={{ color: '#64748b', maxWidth: 640, margin: '12px auto 0', fontSize: '1.05rem' }}>
@@ -286,20 +289,20 @@ export const LandingPage = () => {
           gap: 28
         }}>
           {/* Card 1 */}
-          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16, border: '1.5px solid #e0f2fe' }}>
             <div style={{
               width: 52,
               height: 52,
               borderRadius: 14,
-              backgroundColor: '#e8f5ee',
-              color: '#10432f',
+              backgroundColor: '#e0f2fe',
+              color: '#0284c7',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
               <Award size={28} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', color: '#072418' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#082f49' }}>
               Secure Certificate Issuance
             </h3>
             <p style={{ color: '#64748b', fontSize: '0.925rem', lineHeight: 1.6 }}>
@@ -308,20 +311,20 @@ export const LandingPage = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16, border: '1.5px solid #e0f2fe' }}>
             <div style={{
               width: 52,
               height: 52,
               borderRadius: 14,
-              backgroundColor: '#fef9c3',
-              color: '#b38618',
+              backgroundColor: '#f0f9ff',
+              color: '#0369a1',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
               <FileCheck size={28} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', color: '#072418' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#082f49' }}>
               Unique Certificate IDs
             </h3>
             <p style={{ color: '#64748b', fontSize: '0.925rem', lineHeight: 1.6 }}>
@@ -330,20 +333,20 @@ export const LandingPage = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16, border: '1.5px solid #e0f2fe' }}>
             <div style={{
               width: 52,
               height: 52,
               borderRadius: 14,
               backgroundColor: '#e0f2fe',
-              color: '#0369a1',
+              color: '#0ea5e9',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
               <QrCode size={28} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', color: '#072418' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#082f49' }}>
               QR-Based Instant Verification
             </h3>
             <p style={{ color: '#64748b', fontSize: '0.925rem', lineHeight: 1.6 }}>
@@ -352,20 +355,20 @@ export const LandingPage = () => {
           </div>
 
           {/* Card 4 */}
-          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div className="card-white" style={{ padding: 32, display: 'flex', flexDirection: 'column', gap: 16, border: '1.5px solid #e0f2fe' }}>
             <div style={{
               width: 52,
               height: 52,
               borderRadius: 14,
-              backgroundColor: '#fae8ff',
-              color: '#86198f',
+              backgroundColor: '#f0fdf4',
+              color: '#059669',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
               <Database size={28} />
             </div>
-            <h3 style={{ fontSize: '1.25rem', color: '#072418' }}>
+            <h3 style={{ fontSize: '1.25rem', color: '#082f49' }}>
               Trusted MySQL Audit Registry
             </h3>
             <p style={{ color: '#64748b', fontSize: '0.925rem', lineHeight: 1.6 }}>
@@ -377,18 +380,18 @@ export const LandingPage = () => {
 
       {/* How CampusVault Works Section */}
       <section style={{
-        backgroundColor: '#0a3323',
-        color: '#ffffff',
+        backgroundColor: '#f0f9ff',
+        color: '#082f49',
         padding: '80px 24px',
-        borderTop: '1px solid rgba(212, 175, 55, 0.2)',
-        borderBottom: '1px solid rgba(212, 175, 55, 0.2)'
+        borderTop: '1px solid #bae6fd',
+        borderBottom: '1px solid #bae6fd'
       }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ color: '#d4af37', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+            <div style={{ color: '#0284c7', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
               End-to-End Credential Flow
             </div>
-            <h2 style={{ fontSize: '2.2rem', color: '#ffffff', marginTop: 8 }}>
+            <h2 style={{ fontSize: '2.2rem', color: '#082f49', marginTop: 8, fontWeight: 800 }}>
               How CampusVault Works
             </h2>
           </div>
@@ -421,25 +424,26 @@ export const LandingPage = () => {
               }
             ].map((s, idx) => (
               <div key={idx} style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
+                backgroundColor: '#ffffff',
+                border: '1.5px solid #bae6fd',
                 borderRadius: 16,
                 padding: 24,
-                position: 'relative'
+                position: 'relative',
+                boxShadow: '0 4px 14px rgba(14, 165, 233, 0.06)'
               }}>
                 <div style={{
                   fontFamily: 'Outfit, sans-serif',
                   fontSize: '2rem',
                   fontWeight: 800,
-                  color: '#d4af37',
+                  color: '#0284c7',
                   marginBottom: 12
                 }}>
                   {s.step}
                 </div>
-                <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: 8 }}>
+                <h4 style={{ color: '#082f49', fontSize: '1.1rem', marginBottom: 8, fontWeight: 700 }}>
                   {s.title}
                 </h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.875rem', lineHeight: 1.6 }}>
+                <p style={{ color: '#64748b', fontSize: '0.875rem', lineHeight: 1.6 }}>
                   {s.desc}
                 </p>
               </div>
@@ -453,21 +457,30 @@ export const LandingPage = () => {
         <div style={{
           maxWidth: 800,
           margin: '0 auto',
-          background: 'linear-gradient(135deg, #0e4430 0%, #072318 100%)',
+          background: 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)',
           borderRadius: 24,
           padding: '48px 32px',
           color: '#ffffff',
-          boxShadow: '0 20px 40px -10px rgba(7, 35, 24, 0.3)',
-          border: '1.5px solid #d4af37'
+          boxShadow: '0 20px 40px -10px rgba(2, 132, 199, 0.25)',
+          border: '1.5px solid #bae6fd'
         }}>
           <h2 style={{ color: '#ffffff', fontSize: '2rem', marginBottom: 16 }}>
             Ready to Verify or Issue Certificates?
           </h2>
-          <p style={{ color: '#cbd5e1', fontSize: '1.05rem', maxWidth: 540, margin: '0 auto 32px' }}>
+          <p style={{ color: '#e0f2fe', fontSize: '1.05rem', maxWidth: 540, margin: '0 auto 32px' }}>
             Check existing credentials publicly without logging in, or sign in to your institutional student/admin portal.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/verify" className="btn btn-gold btn-lg">
+            <Link
+              to="/verify"
+              className="btn btn-lg"
+              style={{
+                backgroundColor: '#ffffff',
+                color: '#0284c7',
+                fontWeight: 700,
+                boxShadow: '0 4px 14px rgba(0,0,0,0.1)'
+              }}
+            >
               <ShieldCheck size={20} />
               Public Certificate Verifier
             </Link>

@@ -114,12 +114,12 @@ export const AdminEventsPage = () => {
   );
 
   return (
-    <div style={{ flex: 1, backgroundColor: '#f7faf8', padding: '40px 24px 80px' }}>
+    <div style={{ flex: 1, backgroundColor: '#f0f7ff', padding: '40px 24px 80px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* Page Top */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16, marginBottom: 32 }}>
           <div>
-            <h1 style={{ fontSize: '2.2rem', color: '#072418', marginBottom: 6 }}>
+            <h1 style={{ fontSize: '2.2rem', color: '#082f49', marginBottom: 6 }}>
               Event Management
             </h1>
             <p style={{ color: '#64748b' }}>
@@ -133,9 +133,9 @@ export const AdminEventsPage = () => {
         </div>
 
         {/* Filters & Search Bar */}
-        <div className="card-white" style={{ padding: 18, marginBottom: 28, display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="card-white" style={{ padding: 18, marginBottom: 28, display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', border: '1.5px solid #bae6fd' }}>
           <div style={{ position: 'relative', flex: 1, minWidth: 260 }}>
-            <Search size={18} color="#94a3b8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
+            <Search size={18} color="#0284c7" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
             <input
               type="text"
               placeholder="Search events by title or code..."
@@ -158,9 +158,9 @@ export const AdminEventsPage = () => {
                   fontWeight: 600,
                   cursor: 'pointer',
                   border: '1px solid',
-                  backgroundColor: selectedCategory === cat ? '#10432f' : '#ffffff',
+                  backgroundColor: selectedCategory === cat ? '#0284c7' : '#ffffff',
                   color: selectedCategory === cat ? '#ffffff' : '#475569',
-                  borderColor: selectedCategory === cat ? '#10432f' : '#cbd5e1'
+                  borderColor: selectedCategory === cat ? '#0284c7' : '#bae6fd'
                 }}
               >
                 {cat}
@@ -174,7 +174,7 @@ export const AdminEventsPage = () => {
           <div style={{ textAlign: 'center', padding: 60, color: '#64748b' }}>Loading events...</div>
         ) : filteredEvents.length === 0 ? (
           <div className="card-white" style={{ padding: 48, textAlign: 'center' }}>
-            <Calendar size={48} color="#cbd5e1" style={{ margin: '0 auto 16px' }} />
+            <Calendar size={48} color="#bae6fd" style={{ margin: '0 auto 16px' }} />
             <h3 style={{ color: '#334155', marginBottom: 8 }}>No events found</h3>
             <p style={{ color: '#64748b' }}>Create a new event using the button above.</p>
           </div>
@@ -189,7 +189,7 @@ export const AdminEventsPage = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  border: '1.5px solid #e2e8f0'
+                  border: '1.5px solid #e0f2fe'
                 }}
               >
                 <div>
@@ -200,7 +200,7 @@ export const AdminEventsPage = () => {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.25rem', color: '#072418', marginBottom: 6 }}>
+                  <h3 style={{ fontSize: '1.25rem', color: '#082f49', marginBottom: 6 }}>
                     {event.eventName}
                   </h3>
 
@@ -210,13 +210,13 @@ export const AdminEventsPage = () => {
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: '0.85rem', color: '#475569', marginBottom: 20 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <Calendar size={15} color="#165b40" />
-                      <span>Date: <strong>{event.eventDate}</strong></span>
+                      <Calendar size={15} color="#0284c7" />
+                      <span>Date: <strong style={{ color: '#082f49' }}>{event.eventDate}</strong></span>
                     </div>
                     <div>
-                      <span>Organizer: <strong>{event.organizer}</strong></span>
+                      <span>Organizer: <strong style={{ color: '#082f49' }}>{event.organizer}</strong></span>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#165b40' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#0284c7' }}>
                       <Award size={15} />
                       <span>Issued Certificates: <strong>{event.certificateCount}</strong></span>
                     </div>
@@ -228,13 +228,14 @@ export const AdminEventsPage = () => {
                   <button
                     onClick={() => openEditModal(event)}
                     className="btn btn-secondary btn-sm"
+                    style={{ border: '1px solid #bae6fd' }}
                   >
-                    <Edit2 size={14} /> Edit
+                    <Edit2 size={14} color="#0284c7" /> Edit
                   </button>
                   <button
                     onClick={() => handleDelete(event.id, event.eventName, event.certificateCount)}
                     className="btn btn-secondary btn-sm"
-                    style={{ color: '#dc2626' }}
+                    style={{ color: '#dc2626', border: '1px solid #fecaca' }}
                     title={event.certificateCount > 0 ? "Cannot delete event with issued certificates" : "Delete event"}
                   >
                     <Trash2 size={14} /> Delete
@@ -245,11 +246,11 @@ export const AdminEventsPage = () => {
           </div>
         )}
 
-        {/* Create/Edit Modal */}
+        {/* Modal: Create or Edit Event */}
         <Modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          title={isEditing ? 'Edit Event Details' : 'Create New Event'}
+          title={isEditing ? 'Edit Academic Event' : 'Create New Academic Event'}
         >
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -259,12 +260,12 @@ export const AdminEventsPage = () => {
                 required
                 value={formData.eventName}
                 onChange={(e) => setFormData({ ...formData, eventName: e.target.value })}
-                placeholder="e.g. React & Full-Stack Cloud Architecture Workshop"
+                placeholder="e.g. Full-Stack Web Development Bootcamp"
                 className="form-input"
               />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
               <div className="form-group">
                 <label className="form-label">Category *</label>
                 <select
@@ -272,13 +273,13 @@ export const AdminEventsPage = () => {
                   onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                   className="form-select"
                 >
-                  <option value="WORKSHOP">WORKSHOP</option>
-                  <option value="HACKATHON">HACKATHON</option>
-                  <option value="INTERNSHIP">INTERNSHIP</option>
-                  <option value="TECHNICAL">TECHNICAL</option>
-                  <option value="CULTURAL">CULTURAL</option>
-                  <option value="CLUB_ACTIVITY">CLUB_ACTIVITY</option>
-                  <option value="SEMINAR">SEMINAR</option>
+                  <option value="WORKSHOP">Workshop</option>
+                  <option value="HACKATHON">Hackathon</option>
+                  <option value="INTERNSHIP">Internship</option>
+                  <option value="TECHNICAL">Technical Competition</option>
+                  <option value="CULTURAL">Cultural Event</option>
+                  <option value="SEMINAR">Seminar / Symposium</option>
+                  <option value="CLUB_ACTIVITY">Club Activity</option>
                 </select>
               </div>
 
@@ -301,23 +302,22 @@ export const AdminEventsPage = () => {
                 required
                 value={formData.organizer}
                 onChange={(e) => setFormData({ ...formData, organizer: e.target.value })}
-                placeholder="e.g. School of Computing & Department of CSE"
                 className="form-input"
               />
             </div>
 
             <div className="form-group">
-              <label className="form-label">Description</label>
+              <label className="form-label">Description & Syllabus</label>
               <textarea
                 rows={3}
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                placeholder="Brief summary of event learning outcomes, syllabus, or awards"
+                placeholder="Describe key objectives, activities, or curriculum..."
                 className="form-textarea"
               />
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12, marginTop: 24 }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12, marginTop: 20 }}>
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
@@ -330,7 +330,7 @@ export const AdminEventsPage = () => {
                 disabled={submitting}
                 className="btn btn-primary"
               >
-                {submitting ? 'Saving...' : isEditing ? 'Update Event' : 'Create Event'}
+                {submitting ? 'Saving Event...' : isEditing ? 'Update Event' : 'Create Event'}
               </button>
             </div>
           </form>

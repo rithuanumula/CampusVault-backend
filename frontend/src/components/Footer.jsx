@@ -6,9 +6,9 @@ export const Footer = () => {
   return (
     <footer style={{
       marginTop: 'auto',
-      background: '#04140d',
-      borderTop: '1px solid rgba(212, 175, 55, 0.2)',
-      color: '#94a3b8',
+      background: '#ffffff',
+      borderTop: '1.5px solid #e0f2fe',
+      color: '#64748b',
       fontSize: '0.875rem',
       padding: '48px 24px 24px'
     }}>
@@ -23,24 +23,25 @@ export const Footer = () => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
               <div style={{
-                width: 32,
-                height: 32,
+                width: 34,
+                height: 34,
                 borderRadius: 8,
-                background: '#0e382c',
-                border: '1px solid #d4af37',
+                background: 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
+                border: '1px solid #bae6fd',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                boxShadow: '0 2px 8px rgba(14, 165, 233, 0.25)'
               }}>
-                <ShieldCheck size={18} color="#d4af37" />
+                <ShieldCheck size={18} color="#ffffff" />
               </div>
               <span style={{
                 fontFamily: 'Outfit, sans-serif',
                 fontSize: '1.25rem',
                 fontWeight: 700,
-                color: '#ffffff'
+                color: '#082f49'
               }}>
-                Campus<span style={{ color: '#d4af37' }}>Vault</span>
+                Campus<span style={{ color: '#0284c7' }}>Vault</span>
               </span>
             </div>
             <p style={{ color: '#64748b', lineHeight: 1.6, maxWidth: 320 }}>
@@ -50,22 +51,22 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <div style={{ color: '#ffffff', fontWeight: 700, marginBottom: 14, fontFamily: 'Outfit, sans-serif' }}>
+            <div style={{ color: '#082f49', fontWeight: 700, marginBottom: 14, fontFamily: 'Outfit, sans-serif' }}>
               Verification & Registry
             </div>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
               <li>
-                <Link to="/verify" style={{ color: '#94a3b8', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = '#d4af37'} onMouseOut={e => e.target.style.color = '#94a3b8'}>
+                <Link to="/verify" style={{ color: '#64748b', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = '#0284c7'} onMouseOut={e => e.target.style.color = '#64748b'}>
                   Public Certificate Verifier
                 </Link>
               </li>
               <li>
-                <Link to="/verify/AU-WEB-2026-00421" style={{ color: '#94a3b8' }} onMouseOver={e => e.target.style.color = '#d4af37'} onMouseOut={e => e.target.style.color = '#94a3b8'}>
+                <Link to="/verify/AU-WEB-2026-00421" style={{ color: '#64748b' }} onMouseOver={e => e.target.style.color = '#0284c7'} onMouseOut={e => e.target.style.color = '#64748b'}>
                   Verify Sample Certificate
                 </Link>
               </li>
               <li>
-                <Link to="/events" style={{ color: '#94a3b8' }} onMouseOver={e => e.target.style.color = '#d4af37'} onMouseOut={e => e.target.style.color = '#94a3b8'}>
+                <Link to="/events" style={{ color: '#64748b' }} onMouseOver={e => e.target.style.color = '#0284c7'} onMouseOut={e => e.target.style.color = '#64748b'}>
                   Institutions & Event Catalog
                 </Link>
               </li>
@@ -74,34 +75,34 @@ export const Footer = () => {
 
           {/* Portals */}
           <div>
-            <div style={{ color: '#ffffff', fontWeight: 700, marginBottom: 14, fontFamily: 'Outfit, sans-serif' }}>
+            <div style={{ color: '#082f49', fontWeight: 700, marginBottom: 14, fontFamily: 'Outfit, sans-serif' }}>
               Portals & Access
             </div>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <li><Link to="/login" style={{ color: '#94a3b8' }}>Institutional Login</Link></li>
-              <li><Link to="/register" style={{ color: '#94a3b8' }}>Student Self-Registration</Link></li>
-              <li><Link to="/student/dashboard" style={{ color: '#94a3b8' }}>Student Credential Vault</Link></li>
-              <li><Link to="/admin/dashboard" style={{ color: '#94a3b8' }}>Admin Issuance Desk</Link></li>
+              <li><Link to="/login" style={{ color: '#64748b' }} onMouseOver={e => e.target.style.color = '#0284c7'} onMouseOut={e => e.target.style.color = '#64748b'}>Institutional Login</Link></li>
+              <li><Link to="/register" style={{ color: '#64748b' }} onMouseOver={e => e.target.style.color = '#0284c7'} onMouseOut={e => e.target.style.color = '#64748b'}>Student Self-Registration</Link></li>
+              <li><Link to="/student/dashboard" style={{ color: '#64748b' }} onMouseOver={e => e.target.style.color = '#0284c7'} onMouseOut={e => e.target.style.color = '#64748b'}>Student Credential Vault</Link></li>
+              <li><Link to="/admin/dashboard" style={{ color: '#64748b' }} onMouseOver={e => e.target.style.color = '#0284c7'} onMouseOut={e => e.target.style.color = '#64748b'}>Admin Issuance Desk</Link></li>
             </ul>
           </div>
 
           {/* Compliance & Trust */}
           <div>
-            <div style={{ color: '#ffffff', fontWeight: 700, marginBottom: 14, fontFamily: 'Outfit, sans-serif' }}>
-              Security & Verification Guarantee
+            <div style={{ color: '#082f49', fontWeight: 700, marginBottom: 14, fontFamily: 'Outfit, sans-serif' }}>
+              Security & Trust Guarantee
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#a7f3d0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#0284c7', background: '#f0f9ff', padding: '6px 12px', borderRadius: 8, border: '1px solid #bae6fd' }}>
                 <CheckCircle2 size={16} />
-                <span>Zero Hardcoded Verifications</span>
+                <span style={{ fontSize: '0.825rem', fontWeight: 600 }}>Zero Hardcoded Verifications</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#a7f3d0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#0284c7', background: '#f0f9ff', padding: '6px 12px', borderRadius: 8, border: '1px solid #bae6fd' }}>
                 <Lock size={16} />
-                <span>Spring Security + JWT Auth</span>
+                <span style={{ fontSize: '0.825rem', fontWeight: 600 }}>Spring Security + JWT Auth</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#a7f3d0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#0284c7', background: '#f0f9ff', padding: '6px 12px', borderRadius: 8, border: '1px solid #bae6fd' }}>
                 <Award size={16} />
-                <span>Direct MySQL 8 Cryptographic Audit</span>
+                <span style={{ fontSize: '0.825rem', fontWeight: 600 }}>Direct MySQL 8 Cryptographic Audit</span>
               </div>
             </div>
           </div>
@@ -109,7 +110,7 @@ export const Footer = () => {
 
         {/* Bottom bar */}
         <div style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          borderTop: '1px solid #e2e8f0',
           paddingTop: 24,
           display: 'flex',
           flexWrap: 'wrap',

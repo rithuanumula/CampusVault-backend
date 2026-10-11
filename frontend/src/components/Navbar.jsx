@@ -18,12 +18,13 @@ export const Navbar = () => {
 
   return (
     <header style={{
-      background: 'linear-gradient(180deg, #072318 0%, #0a3323 100%)',
-      borderBottom: '1px solid rgba(212, 175, 55, 0.25)',
+      background: 'rgba(255, 255, 255, 0.96)',
+      backdropFilter: 'blur(14px)',
+      borderBottom: '1.5px solid #e0f2fe',
       position: 'sticky',
       top: 0,
       zIndex: 1000,
-      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.25)'
+      boxShadow: '0 4px 20px -2px rgba(14, 165, 233, 0.08)'
     }}>
       <div style={{
         maxWidth: 1280,
@@ -40,14 +41,14 @@ export const Navbar = () => {
             width: 44,
             height: 44,
             borderRadius: 12,
-            background: 'linear-gradient(135deg, #165b40 0%, #0c3323 100%)',
-            border: '1.5px solid #d4af37',
+            background: 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
+            border: '1.5px solid #bae6fd',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 0 16px rgba(212, 175, 55, 0.3)'
+            boxShadow: '0 2px 14px rgba(14, 165, 233, 0.25)'
           }}>
-            <ShieldCheck size={26} color="#d4af37" />
+            <ShieldCheck size={26} color="#ffffff" />
           </div>
           <div>
             <div style={{
@@ -55,19 +56,19 @@ export const Navbar = () => {
               fontSize: '1.4rem',
               fontWeight: 800,
               letterSpacing: '-0.02em',
-              color: '#ffffff',
+              color: '#082f49',
               display: 'flex',
               alignItems: 'center',
               gap: 4
             }}>
-              Campus<span style={{ color: '#d4af37' }}>Vault</span>
+              Campus<span style={{ color: '#0284c7' }}>Vault</span>
             </div>
             <div style={{
               fontSize: '0.65rem',
               fontWeight: 600,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: '#a7f3d0'
+              color: '#0284c7'
             }}>
               Digital Credential Registry
             </div>
@@ -75,7 +76,7 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav style={{ display: 'none', alignItems: 'center', gap: 8 }} className="desktop-nav">
+        <nav style={{ display: 'none', alignItems: 'center', gap: 6 }} className="desktop-nav">
           <Link
             to="/verify"
             style={{
@@ -83,15 +84,16 @@ export const Navbar = () => {
               borderRadius: 8,
               fontSize: '0.875rem',
               fontWeight: 600,
-              color: isActive('/verify') ? '#ffffff' : '#d1fae5',
-              backgroundColor: isActive('/verify') ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+              color: isActive('/verify') ? '#0284c7' : '#475569',
+              backgroundColor: isActive('/verify') ? '#f0f9ff' : 'transparent',
+              border: isActive('/verify') ? '1px solid #bae6fd' : '1px solid transparent',
               display: 'flex',
               alignItems: 'center',
               gap: 6,
               transition: 'all 0.2s'
             }}
           >
-            <ShieldCheck size={16} color="#d4af37" />
+            <ShieldCheck size={16} color="#0284c7" />
             Verify Credential
           </Link>
 
@@ -102,14 +104,16 @@ export const Navbar = () => {
               borderRadius: 8,
               fontSize: '0.875rem',
               fontWeight: 600,
-              color: isActive('/events') ? '#ffffff' : '#d1fae5',
-              backgroundColor: isActive('/events') ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+              color: isActive('/events') ? '#0284c7' : '#475569',
+              backgroundColor: isActive('/events') ? '#f0f9ff' : 'transparent',
+              border: isActive('/events') ? '1px solid #bae6fd' : '1px solid transparent',
               display: 'flex',
               alignItems: 'center',
-              gap: 6
+              gap: 6,
+              transition: 'all 0.2s'
             }}
           >
-            <Calendar size={16} />
+            <Calendar size={16} color="#0284c7" />
             Events
           </Link>
 
@@ -123,8 +127,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: isActive('/admin/dashboard') ? '#ffffff' : '#d1fae5',
-                  backgroundColor: isActive('/admin/dashboard') ? 'rgba(255, 255, 255, 0.12)' : 'transparent'
+                  color: isActive('/admin/dashboard') ? '#0284c7' : '#475569',
+                  backgroundColor: isActive('/admin/dashboard') ? '#f0f9ff' : 'transparent',
+                  border: isActive('/admin/dashboard') ? '1px solid #bae6fd' : '1px solid transparent'
                 }}
               >
                 Dashboard
@@ -136,8 +141,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: isActive('/admin/certificates') ? '#ffffff' : '#d1fae5',
-                  backgroundColor: isActive('/admin/certificates') ? 'rgba(255, 255, 255, 0.12)' : 'transparent'
+                  color: isActive('/admin/certificates') ? '#0284c7' : '#475569',
+                  backgroundColor: isActive('/admin/certificates') ? '#f0f9ff' : 'transparent',
+                  border: isActive('/admin/certificates') ? '1px solid #bae6fd' : '1px solid transparent'
                 }}
               >
                 Certificates
@@ -149,8 +155,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: '#082418',
-                  backgroundColor: '#d4af37',
+                  color: '#ffffff',
+                  background: 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)',
+                  boxShadow: '0 2px 8px rgba(14, 165, 233, 0.25)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 6
@@ -166,8 +173,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: isActive('/admin/students') ? '#ffffff' : '#d1fae5',
-                  backgroundColor: isActive('/admin/students') ? 'rgba(255, 255, 255, 0.12)' : 'transparent'
+                  color: isActive('/admin/students') ? '#0284c7' : '#475569',
+                  backgroundColor: isActive('/admin/students') ? '#f0f9ff' : 'transparent',
+                  border: isActive('/admin/students') ? '1px solid #bae6fd' : '1px solid transparent'
                 }}
               >
                 Students
@@ -179,8 +187,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: isActive('/admin/verifications') ? '#ffffff' : '#d1fae5',
-                  backgroundColor: isActive('/admin/verifications') ? 'rgba(255, 255, 255, 0.12)' : 'transparent'
+                  color: isActive('/admin/verifications') ? '#0284c7' : '#475569',
+                  backgroundColor: isActive('/admin/verifications') ? '#f0f9ff' : 'transparent',
+                  border: isActive('/admin/verifications') ? '1px solid #bae6fd' : '1px solid transparent'
                 }}
               >
                 Audit Log
@@ -198,8 +207,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: isActive('/student/dashboard') ? '#ffffff' : '#d1fae5',
-                  backgroundColor: isActive('/student/dashboard') ? 'rgba(255, 255, 255, 0.12)' : 'transparent'
+                  color: isActive('/student/dashboard') ? '#0284c7' : '#475569',
+                  backgroundColor: isActive('/student/dashboard') ? '#f0f9ff' : 'transparent',
+                  border: isActive('/student/dashboard') ? '1px solid #bae6fd' : '1px solid transparent'
                 }}
               >
                 My Dashboard
@@ -211,14 +221,15 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: isActive('/student/certificates') ? '#ffffff' : '#d1fae5',
-                  backgroundColor: isActive('/student/certificates') ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                  color: isActive('/student/certificates') ? '#0284c7' : '#475569',
+                  backgroundColor: isActive('/student/certificates') ? '#f0f9ff' : 'transparent',
+                  border: isActive('/student/certificates') ? '1px solid #bae6fd' : '1px solid transparent',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 6
                 }}
               >
-                <Award size={16} />
+                <Award size={16} color="#0284c7" />
                 My Certificates
               </Link>
             </>
@@ -230,14 +241,14 @@ export const Navbar = () => {
           {isAuthenticated ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
               <div style={{ textAlign: 'right', display: 'none' }} className="user-meta">
-                <div style={{ color: '#ffffff', fontSize: '0.875rem', fontWeight: 600 }}>
+                <div style={{ color: '#0f172a', fontSize: '0.875rem', fontWeight: 600 }}>
                   {user?.fullName}
                 </div>
                 <div style={{
                   display: 'inline-block',
                   fontSize: '0.7rem',
                   fontWeight: 700,
-                  color: isAdmin ? '#d4af37' : '#a7f3d0',
+                  color: '#0284c7',
                   textTransform: 'uppercase'
                 }}>
                   {isAdmin ? 'Administrator' : `Student (${user?.studentId || 'AU'})`}
@@ -246,9 +257,9 @@ export const Navbar = () => {
               <button
                 onClick={handleLogout}
                 style={{
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  color: '#ffffff',
+                  background: '#f0f9ff',
+                  border: '1px solid #bae6fd',
+                  color: '#0369a1',
                   padding: '8px 14px',
                   borderRadius: 8,
                   cursor: 'pointer',
@@ -274,9 +285,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 600,
-                  color: '#ffffff',
-                  background: 'transparent',
-                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  color: '#0284c7',
+                  background: '#f0f9ff',
+                  border: '1.5px solid #bae6fd',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 6
@@ -292,9 +303,9 @@ export const Navbar = () => {
                   borderRadius: 8,
                   fontSize: '0.875rem',
                   fontWeight: 700,
-                  color: '#082418',
-                  background: 'linear-gradient(135deg, #d4af37 0%, #e4c45b 100%)',
-                  boxShadow: '0 2px 10px rgba(212, 175, 55, 0.3)',
+                  color: '#ffffff',
+                  background: 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
+                  boxShadow: '0 2px 10px rgba(14, 165, 233, 0.25)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 6
@@ -312,7 +323,7 @@ export const Navbar = () => {
             style={{
               background: 'transparent',
               border: 'none',
-              color: '#ffffff',
+              color: '#082f49',
               cursor: 'pointer',
               display: 'flex',
               padding: 6
@@ -327,40 +338,41 @@ export const Navbar = () => {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div style={{
-          background: '#072318',
-          borderTop: '1px solid rgba(212, 175, 55, 0.2)',
+          background: '#ffffff',
+          borderTop: '1px solid #e0f2fe',
           padding: '16px 24px',
           display: 'flex',
           flexDirection: 'column',
-          gap: 12
+          gap: 12,
+          boxShadow: '0 10px 20px rgba(0, 0, 0, 0.05)'
         }}>
           <Link
             to="/verify"
             onClick={() => setMobileMenuOpen(false)}
-            style={{ color: '#d1fae5', padding: '8px 0', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}
+            style={{ color: '#0284c7', padding: '8px 0', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}
           >
-            <ShieldCheck size={18} color="#d4af37" /> Verify Credential
+            <ShieldCheck size={18} color="#0284c7" /> Verify Credential
           </Link>
           <Link
             to="/events"
             onClick={() => setMobileMenuOpen(false)}
-            style={{ color: '#d1fae5', padding: '8px 0', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}
+            style={{ color: '#475569', padding: '8px 0', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}
           >
-            <Calendar size={18} /> Events
+            <Calendar size={18} color="#0284c7" /> Events
           </Link>
           {isAdmin && (
             <>
-              <Link to="/admin/dashboard" onClick={() => setMobileMenuOpen(false)} style={{ color: '#ffffff', padding: '8px 0' }}>Admin Dashboard</Link>
-              <Link to="/admin/certificates" onClick={() => setMobileMenuOpen(false)} style={{ color: '#ffffff', padding: '8px 0' }}>Certificates</Link>
-              <Link to="/admin/certificates/new" onClick={() => setMobileMenuOpen(false)} style={{ color: '#d4af37', padding: '8px 0', fontWeight: 700 }}>+ Issue Certificate</Link>
-              <Link to="/admin/students" onClick={() => setMobileMenuOpen(false)} style={{ color: '#ffffff', padding: '8px 0' }}>Students</Link>
-              <Link to="/admin/verifications" onClick={() => setMobileMenuOpen(false)} style={{ color: '#ffffff', padding: '8px 0' }}>Verification Audit Log</Link>
+              <Link to="/admin/dashboard" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', padding: '8px 0' }}>Admin Dashboard</Link>
+              <Link to="/admin/certificates" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', padding: '8px 0' }}>Certificates</Link>
+              <Link to="/admin/certificates/new" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0284c7', padding: '8px 0', fontWeight: 700 }}>+ Issue Certificate</Link>
+              <Link to="/admin/students" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', padding: '8px 0' }}>Students</Link>
+              <Link to="/admin/verifications" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', padding: '8px 0' }}>Verification Audit Log</Link>
             </>
           )}
           {isStudent && (
             <>
-              <Link to="/student/dashboard" onClick={() => setMobileMenuOpen(false)} style={{ color: '#ffffff', padding: '8px 0' }}>Student Dashboard</Link>
-              <Link to="/student/certificates" onClick={() => setMobileMenuOpen(false)} style={{ color: '#ffffff', padding: '8px 0' }}>My Certificates</Link>
+              <Link to="/student/dashboard" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', padding: '8px 0' }}>Student Dashboard</Link>
+              <Link to="/student/certificates" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', padding: '8px 0' }}>My Certificates</Link>
             </>
           )}
         </div>

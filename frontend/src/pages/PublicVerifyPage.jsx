@@ -58,7 +58,7 @@ export const PublicVerifyPage = () => {
             particleCount: 80,
             spread: 70,
             origin: { y: 0.6 },
-            colors: ['#10b981', '#d4af37', '#0e4430', '#ffffff']
+            colors: ['#0284c7', '#38bdf8', '#0ea5e9', '#ffffff']
           });
         }
       } else {
@@ -86,7 +86,7 @@ export const PublicVerifyPage = () => {
   };
 
   return (
-    <div style={{ flex: 1, backgroundColor: '#f7faf8', padding: '48px 24px 80px' }}>
+    <div style={{ flex: 1, backgroundColor: '#f0f7ff', padding: '48px 24px 80px' }}>
       <div style={{ maxWidth: 880, margin: '0 auto' }}>
         {/* Page Header */}
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
@@ -96,18 +96,20 @@ export const PublicVerifyPage = () => {
             gap: 8,
             padding: '6px 14px',
             borderRadius: 9999,
-            backgroundColor: '#e8f5ee',
-            color: '#10432f',
+            backgroundColor: '#ffffff',
+            border: '1px solid #bae6fd',
+            color: '#0284c7',
             fontSize: '0.8rem',
             fontWeight: 700,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            marginBottom: 12
+            marginBottom: 12,
+            boxShadow: '0 2px 8px rgba(14, 165, 233, 0.1)'
           }}>
-            <ShieldCheck size={16} color="#165b40" />
+            <ShieldCheck size={16} color="#0284c7" />
             Public Verification Authority
           </div>
-          <h1 style={{ fontSize: '2.4rem', color: '#072418', marginBottom: 12 }}>
+          <h1 style={{ fontSize: '2.4rem', color: '#082f49', marginBottom: 12 }}>
             Verify Certificate Authenticity
           </h1>
           <p style={{ color: '#64748b', fontSize: '1.05rem', maxWidth: 620, margin: '0 auto' }}>
@@ -116,7 +118,7 @@ export const PublicVerifyPage = () => {
         </div>
 
         {/* Verification Input Card */}
-        <div className="card-white" style={{ padding: 28, marginBottom: 36, border: '1.5px solid #e2e8f0' }}>
+        <div className="card-white" style={{ padding: 28, marginBottom: 36, border: '1.5px solid #bae6fd' }}>
           <form onSubmit={handleFormSubmit}>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <div style={{ flex: 1, minWidth: 260, position: 'relative' }}>
@@ -139,10 +141,10 @@ export const PublicVerifyPage = () => {
                 type="button"
                 onClick={() => setIsScannerOpen(true)}
                 className="btn btn-secondary"
-                style={{ padding: '14px 20px', fontSize: '0.95rem' }}
+                style={{ padding: '14px 20px', fontSize: '0.95rem', border: '1px solid #bae6fd' }}
                 title="Scan with Camera"
               >
-                <Camera size={20} color="#10432f" />
+                <Camera size={20} color="#0284c7" />
                 <span>Scan QR</span>
               </button>
 
@@ -178,14 +180,15 @@ export const PublicVerifyPage = () => {
                 performVerification('AU-WEB-2026-00421', 'MANUAL_ID');
               }}
               style={{
-                background: '#f1f5f9',
-                border: '1px solid #cbd5e1',
+                background: '#ffffff',
+                border: '1px solid #bae6fd',
                 borderRadius: 6,
-                padding: '3px 8px',
+                padding: '4px 10px',
                 cursor: 'pointer',
                 fontFamily: 'JetBrains Mono, monospace',
                 fontSize: '0.8rem',
-                color: '#0f172a'
+                color: '#0284c7',
+                fontWeight: 600
               }}
             >
               AU-WEB-2026-00421 (Valid)
@@ -219,13 +222,13 @@ export const PublicVerifyPage = () => {
               <div style={{
                 backgroundColor: '#ffffff',
                 borderRadius: 20,
-                border: '2px solid #86efac',
-                boxShadow: '0 12px 30px -5px rgba(22, 101, 52, 0.12)',
+                border: '2px solid #38bdf8',
+                boxShadow: '0 12px 30px -5px rgba(14, 165, 233, 0.16)',
                 overflow: 'hidden'
               }}>
                 {/* Result Header */}
                 <div style={{
-                  background: 'linear-gradient(135deg, #064e3b 0%, #047857 100%)',
+                  background: 'linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)',
                   padding: '24px 32px',
                   color: '#ffffff',
                   display: 'flex',
@@ -243,16 +246,16 @@ export const PublicVerifyPage = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      border: '2px solid #86efac'
+                      border: '2px solid #ffffff'
                     }}>
-                      <CheckCircle2 size={30} color="#86efac" />
+                      <CheckCircle2 size={30} color="#ffffff" />
                     </div>
                     <div>
                       <div style={{
                         fontSize: '0.75rem',
                         fontWeight: 700,
                         letterSpacing: '0.1em',
-                        color: '#a7f3d0',
+                        color: '#e0f2fe',
                         textTransform: 'uppercase'
                       }}>
                         Verification Result
@@ -266,8 +269,8 @@ export const PublicVerifyPage = () => {
                   <div style={{
                     padding: '8px 16px',
                     borderRadius: 9999,
-                    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.18)',
+                    border: '1px solid rgba(255, 255, 255, 0.35)',
                     color: '#ffffff',
                     fontFamily: 'JetBrains Mono, monospace',
                     fontSize: '0.9rem',
@@ -287,15 +290,15 @@ export const PublicVerifyPage = () => {
                   }}>
                     {/* Student Info */}
                     <div style={{
-                      backgroundColor: '#f8fafc',
+                      backgroundColor: '#f0f9ff',
                       padding: 20,
                       borderRadius: 14,
-                      border: '1px solid #e2e8f0'
+                      border: '1px solid #bae6fd'
                     }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: '0.85rem', fontWeight: 600, marginBottom: 8 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#0284c7', fontSize: '0.85rem', fontWeight: 600, marginBottom: 8 }}>
                         <User size={16} /> RECIPIENT STUDENT
                       </div>
-                      <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: 4 }}>
+                      <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#082f49', marginBottom: 4 }}>
                         {result.studentName}
                       </div>
                       <div style={{ fontSize: '0.875rem', color: '#475569' }}>
@@ -308,15 +311,15 @@ export const PublicVerifyPage = () => {
 
                     {/* Event Info */}
                     <div style={{
-                      backgroundColor: '#f8fafc',
+                      backgroundColor: '#f0f9ff',
                       padding: 20,
                       borderRadius: 14,
-                      border: '1px solid #e2e8f0'
+                      border: '1px solid #bae6fd'
                     }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: '0.85rem', fontWeight: 600, marginBottom: 8 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#0284c7', fontSize: '0.85rem', fontWeight: 600, marginBottom: 8 }}>
                         <Award size={16} /> EVENT / RECOGNITION
                       </div>
-                      <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0f172a', marginBottom: 4 }}>
+                      <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#082f49', marginBottom: 4 }}>
                         {result.eventName}
                       </div>
                       <div style={{ display: 'inline-block', marginBottom: 6 }}>
@@ -332,15 +335,15 @@ export const PublicVerifyPage = () => {
                   <div style={{
                     padding: 20,
                     borderRadius: 12,
-                    backgroundColor: '#f0fdf4',
-                    border: '1px solid #bbf7d0',
+                    backgroundColor: '#f0f9ff',
+                    border: '1px solid #bae6fd',
                     marginBottom: 28
                   }}>
-                    <div style={{ fontWeight: 700, color: '#166534', marginBottom: 6, fontSize: '1.05rem' }}>
+                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 6, fontSize: '1.05rem' }}>
                       {result.certificateTitle}
                     </div>
                     {result.description && (
-                      <p style={{ color: '#15803d', fontSize: '0.925rem', fontStyle: 'italic', lineHeight: 1.6 }}>
+                      <p style={{ color: '#0284c7', fontSize: '0.925rem', fontStyle: 'italic', lineHeight: 1.6 }}>
                         "{result.description}"
                       </p>
                     )}
@@ -354,16 +357,16 @@ export const PublicVerifyPage = () => {
                     justifyContent: 'space-between',
                     gap: 16,
                     paddingTop: 16,
-                    borderTop: '1px solid #e2e8f0'
+                    borderTop: '1px solid #e0f2fe'
                   }}>
                     <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: '0.875rem', color: '#64748b' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                        <Calendar size={16} />
-                        <span>Issue Date: <strong>{result.issueDate}</strong></span>
+                        <Calendar size={16} color="#0284c7" />
+                        <span>Issue Date: <strong style={{ color: '#082f49' }}>{result.issueDate}</strong></span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                        <Clock size={16} />
-                        <span>Verified At: <strong>{new Date(result.verifiedAt).toLocaleTimeString()}</strong></span>
+                        <Clock size={16} color="#0284c7" />
+                        <span>Verified At: <strong style={{ color: '#082f49' }}>{new Date(result.verifiedAt).toLocaleTimeString()}</strong></span>
                       </div>
                     </div>
 
