@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
-import { ShieldCheck, LogIn, Lock, Mail, KeyRound, UserCheck, Sparkles } from 'lucide-react';
+import { ShieldCheck, LogIn, Lock, Mail, KeyRound } from 'lucide-react';
 
 export const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -37,12 +37,6 @@ export const LoginPage = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const fillCredentials = (demoEmail, demoPass) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setErrorMsg('');
   };
 
   return (
@@ -94,66 +88,6 @@ export const LoginPage = () => {
 
         {/* Form Body */}
         <div style={{ padding: 32 }}>
-          {/* Quick Demo Autofill Bar */}
-          <div style={{
-            padding: 12,
-            backgroundColor: '#f0f9ff',
-            borderRadius: 12,
-            border: '1px solid #bae6fd',
-            marginBottom: 24
-          }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 6,
-              color: '#0284c7',
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              marginBottom: 8
-            }}>
-              <Sparkles size={14} color="#0284c7" />
-              1-Click Demo Credentials
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-              <button
-                type="button"
-                onClick={() => fillCredentials('admin@campusvault.edu', 'Admin@123')}
-                style={{
-                  background: '#ffffff',
-                  border: '1px solid #bae6fd',
-                  borderRadius: 8,
-                  padding: '6px 10px',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  cursor: 'pointer',
-                  textAlign: 'left'
-                }}
-              >
-                🎓 Dean / Admin
-              </button>
-              <button
-                type="button"
-                onClick={() => fillCredentials('rithika@campusvault.edu', 'Student@123')}
-                style={{
-                  background: '#ffffff',
-                  border: '1px solid #bae6fd',
-                  borderRadius: 8,
-                  padding: '6px 10px',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  cursor: 'pointer',
-                  textAlign: 'left'
-                }}
-              >
-                👩‍🎓 Student (Rithika)
-              </button>
-            </div>
-          </div>
-
           {errorMsg && (
             <div style={{
               padding: 12,

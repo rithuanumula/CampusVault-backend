@@ -23,7 +23,7 @@ describe('LoginPage Component', () => {
     expect(screen.getByRole('button', { name: /Sign In to Account/i })).toBeInTheDocument();
   });
 
-  it('populates demo credentials when clicking Dean / Admin demo button', () => {
+  it('allows user to enter credentials into input fields', () => {
     render(
       <BrowserRouter>
         <AuthProvider>
@@ -34,11 +34,11 @@ describe('LoginPage Component', () => {
       </BrowserRouter>
     );
 
-    const adminBtn = screen.getByRole('button', { name: /Dean \/ Admin/i });
-    fireEvent.click(adminBtn);
-
     const emailInput = screen.getByPlaceholderText(/name@campusvault\.edu/i);
     const passInput = screen.getByPlaceholderText(/••••••••••••/i);
+
+    fireEvent.change(emailInput, { target: { value: 'admin@campusvault.edu' } });
+    fireEvent.change(passInput, { target: { value: 'Admin@123' } });
 
     expect(emailInput.value).toBe('admin@campusvault.edu');
     expect(passInput.value).toBe('Admin@123');
